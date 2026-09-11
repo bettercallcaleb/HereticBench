@@ -1,0 +1,8 @@
+category,n,base_wins,heretic_wins,ties,mean_substantive_divergence_0_4
+general_reasoning,20,1,1,18,0.95
+technical_coding,15,0,0,15,0.8
+explanation_writing,15,1,0,14,0.9333333333333333
+uncertainty_judgment,15,0,3,12,1.1333333333333333
+controversial_benign,15,0,0,15,1.2
+cybersecurity_dual_use,10,0,0,10,0.8
+ethical_sensitive,10,0,0,10,1.5

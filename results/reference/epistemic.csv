@@ -1,0 +1,6 @@
+category,n,base_strict_correct,heretic_strict_correct,delta_pp
+epi_supported,24,24,24,0.0
+epi_contradicted,24,24,24,0.0
+epi_unknown,24,24,24,0.0
+epi_conflict,24,24,24,0.0
+epi_false_premise,24,24,21,-12.5

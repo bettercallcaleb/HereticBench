@@ -1,0 +1,19 @@
+{
+  "categories": {
+    "state_tracking_v3": {
+      "selected_tier": "easy"
+    },
+    "code_trace_v3": {
+      "selected_tier": "easy"
+    },
+    "constraint_assignment_v3": {
+      "selected_tier": "medium"
+    },
+    "graph_shortest_v3": {
+      "selected_tier": "easy"
+    },
+    "boolean_circuit_v3": {
+      "selected_tier": "easy"
+    }
+  }
+}

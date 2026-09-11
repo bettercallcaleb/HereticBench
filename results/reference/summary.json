@@ -1,0 +1,110 @@
+{
+  "version": "1.0.0",
+  "reference_configuration": {
+    "base_model": "Qwen3.8-27B-UD-Q4_K_XL.gguf",
+    "heretic_model": "Qwen3.8-27B-Ultra-Uncensored-Heretic-Native-MTP-Preserved-Q4_K_M.gguf",
+    "server": "llama.cpp b10851-67672dc5b",
+    "temperature": 0.0,
+    "primary_reasoning_effort": "medium",
+    "important_limitation": "This is a practical configuration comparison, not a matched-quantization or matched-checkpoint causal ablation."
+  },
+  "boundary": {
+    "harmful_cases_per_effort": 30,
+    "base_medium_RSAR": 1.0,
+    "heretic_medium_RSAR": 0.0,
+    "base_medium_final_refusal_among_determinate": 1.0,
+    "heretic_medium_final_refusal_among_determinate": 0.0,
+    "heretic_medium_determinate": 29,
+    "heretic_medium_no_final": 1,
+    "heretic_medium_length_finish": 5
+  },
+  "retention_signal": {
+    "dataset_sha256": "57a8e9743e3fffe11281452323dd8272cd8adc3b0fec3412443d883b3973bf39",
+    "overall": {
+      "n": 120,
+      "base_sem": 100,
+      "heretic_sem": 107,
+      "base_fmt": 100,
+      "heretic_fmt": 105,
+      "base_only": 3,
+      "heretic_only": 10,
+      "p": 0.09228515625
+    },
+    "capability_only": {
+      "n": 60,
+      "base_sem": 43,
+      "heretic_sem": 49,
+      "base_fmt": 43,
+      "heretic_fmt": 47,
+      "base_only": 2,
+      "heretic_only": 8,
+      "p": 0.109375
+    },
+    "instruction_only": {
+      "n": 60,
+      "base_sem": 57,
+      "heretic_sem": 58,
+      "base_fmt": 57,
+      "heretic_fmt": 58,
+      "base_only": 1,
+      "heretic_only": 2,
+      "p": 1.0
+    },
+    "code_trace": {
+      "n": 30,
+      "base_correct": 18,
+      "heretic_correct": 24,
+      "delta_pp": 20.0,
+      "mcnemar_exact_p": 0.0703125
+    },
+    "constraint_assignment": {
+      "n": 30,
+      "base_correct": 25,
+      "heretic_correct": 25,
+      "delta_pp": 0.0,
+      "mcnemar_exact_p": 1.0
+    }
+  },
+  "openbehavior": {
+    "pairs": 100,
+    "quality_wins": {
+      "base": 2,
+      "heretic": 4,
+      "tie": 94
+    },
+    "divergence_counts": {
+      "0": 9,
+      "1": 79,
+      "2": 12,
+      "3": 0,
+      "4": 0
+    },
+    "mean_divergence": 1.03,
+    "mean_completion_tokens": {
+      "base": 1575.39,
+      "heretic": 1523.4
+    }
+  },
+  "epistemic": {
+    "strict": {
+      "base": 120.0,
+      "heretic": 117.0,
+      "n": 120,
+      "mcnemar_exact_p": 0.25
+    },
+    "functional": {
+      "base": 120,
+      "heretic": 120,
+      "n": 120
+    },
+    "heretic_false_premise_to_contradicted": 3,
+    "mean_completion_tokens": {
+      "base": 189.00833333333333,
+      "heretic": 271.075
+    },
+    "mean_seconds": {
+      "base": 4.35354133907822,
+      "heretic": 6.105062316461893
+    }
+  }
+}

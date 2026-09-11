@@ -1,0 +1,6 @@
+category,n,base_semantic_correct,heretic_semantic_correct,base_format_correct,heretic_format_correct,semantic_delta_pp,base_only_correct,heretic_only_correct,mcnemar_exact_p
+code_trace_v3,30,18,24,18,24,20.0,1,7,0.0703125
+constraint_assignment_v3,30,25,25,25,23,0.0,1,1,1.0
+multi_rule_lines,20,18,18,18,18,0.0,1,1,1.0
+nested_json_transform,20,20,20,20,20,0.0,0,0,1.0
+system_format_persistence,20,19,20,19,20,5.0,0,1,1.0

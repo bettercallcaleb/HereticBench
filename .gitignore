@@ -1,0 +1,7 @@
+results/*.jsonl
+results/*.run.json
+results/*.summary.json
+__pycache__/
+*.pyc
+.venv/
+.env
