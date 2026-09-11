@@ -1,0 +1,46 @@
+name: Bootstrap HereticBench v1.0.0
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.bootstrap/**'
+      - '.github/workflows/bootstrap.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Expand frozen release
+        shell: bash
+        run: |
+          set -euo pipefail
+          ARCHIVE=.bootstrap/hereticbench-v1.0.0.tar.xz
+          if [ ! -f "$ARCHIVE" ]; then
+            echo "No bootstrap archive; nothing to do."
+            exit 0
+          fi
+          echo "2ea310a9916179f642a4bcd96fabb28dc3871e144385e3df7a33f68121806d09  $ARCHIVE" | sha256sum -c -
+          rm -rf /tmp/hb-release
+          mkdir -p /tmp/hb-release
+          tar -xJf "$ARCHIVE" -C /tmp/hb-release
+          shopt -s dotglob nullglob
+          for path in /tmp/hb-release/hereticbench-v1.0.0/*; do
+            cp -a "$path" .
+          done
+          rm -rf .bootstrap
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+            exit 0
+          fi
+          git commit -m "Release HereticBench v1.0.0"
+          git push
